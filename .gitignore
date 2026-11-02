@@ -1,0 +1,29 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# React
+node_modules/
+dist/
+build/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Generated data
+*.log
+interaction_log.jsonl
+stored_data.json
+
+# OS
+.DS_Store
+Thumbs.db
