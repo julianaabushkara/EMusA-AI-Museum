@@ -33,37 +33,6 @@ def convert_audio_to_text(audio_file: Union[str, IO[bytes]]):
         raise  # <-- This will show the actual error in your FastAPI logs
 
 
-"""
-# OPEN AI -CHATGPT
-#GET RESPONSE TO OUR MESSAGE 
-def get_chat_response(message_input):
-    messages=get_recent_messages()
-    user_message={"role":"user","content":message_input}
-    messages.append(user_message)
-    #print(messages)
-
-    try: 
-        resp = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=messages,
-            temperature=1.0,
-            #response_format={"type": "json_object"}  # <- force JSOn
-            
-        )
-
-
-
-
-        messages_text=resp.choices[0].message.content
-        return messages_text
-        
-    except Exception as e:
-        print(e)
-        return
-
-
-"""
-
 def get_chat_response(message_input, lifted_index: Optional[int] = None):  # CHANGES HERE: add lifted_index param
     messages = get_recent_messages(lifted_index=lifted_index)
     user_message = {"role": "user", "content": message_input}
